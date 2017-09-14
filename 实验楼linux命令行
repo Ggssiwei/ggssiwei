@@ -1,0 +1,14 @@
+cd Code
+git clone https://github.com/Ggssiwei/ggssiwei.git
+cd ggssiwei
+vi hello.c
+
+...
+
+gcc -o hello hello.c
+
+...
+
+./hello
+
+...
