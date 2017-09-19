@@ -16,7 +16,7 @@ export default {
   },
   methods:{
     listenMsg: function(msg){
-      this.childwords=this.msg;
+      this.childwords=msg;
     }
   }
 }
