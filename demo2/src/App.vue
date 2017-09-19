@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <h1>这里是父组件！</h1>
+    <component1 v-on:child-tell-something='listenMsg'></component1>
+    <p>Child tells me:{{childwords}}</p>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
+import component1 from './components/component1'
 export default {
-  name: 'app',
-  components: {
-    Hello
+  data: function(){
+    return {
+      childwords:''
+    }
+  },
+  methods:{
+    listenMsg: function(msg){
+      this.childwords=this.msg;
+    }
   }
 }
 </script>
