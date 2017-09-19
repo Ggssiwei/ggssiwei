@@ -1,22 +1,23 @@
 <template>
-  <div id="cp1">
-    <h2>这里是子组件</h2>
-    <h1>Father say:{{allmsgfromfather}}</h1>
-  </div></template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <hello></hello>
+  </div>
+</template>
 
-<script>export default {
-  data: function () {
-    return {
-    }
-  },
-  props: [
-    'allmsgfromfather'
-  ]
+<script>
+import Hello from './components/Hello'
+
+export default {
+  name: 'app',
+  components: {
+    Hello
+  }
 }
 </script>
 
 <style>
-#cp1 {
+#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
