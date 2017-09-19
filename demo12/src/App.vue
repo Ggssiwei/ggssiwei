@@ -2,7 +2,8 @@
   <div id="app">
     <h1>DEMO1:父组件在这呢!</h1>
     <input v-model="msgfromfather" @keyup.enter="emitmsg">
-    <components1 :allmsgfromfather="allmsgfromfather"></components1>
+    <h1>Child say:{{childwords}}</h1>
+    <components1 :allmsgfromfather="allmsgfromfather" v-on:child-tell-something="listenMsg"></components1>
     <button v-on:click="onClickMe">Clear!</button>
   </div>
 </template>
@@ -14,7 +15,8 @@ export default {
   data: function(){
     return {
       allmsgfromfather: '',
-      msgfromfather: ''
+      msgfromfather: '',
+      childwords:'',
       }
   },
   components: {
@@ -27,6 +29,10 @@ export default {
     },
     onClickMe: function(){
       this.allmsgfromfather='';
+      this.childwords='';
+    },
+    listenMsg:function(msg){
+      this.childwords=msg;
     }
   }
 }
