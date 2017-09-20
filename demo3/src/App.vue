@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <component1></component1>
+
+    
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import component1 from "./components/component1"
 
+import bus from './bus'
 export default {
-  name: 'app',
-  components: {
-    Hello
+  components:{
+    component1
   }
 }
 </script>
