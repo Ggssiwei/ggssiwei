@@ -17,6 +17,7 @@ export default {
     methods:{
         send: function(){
             bus.$emit('event-name',this.message);
+            this.message='';
         }
     }
 }
